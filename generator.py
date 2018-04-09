@@ -1,6 +1,6 @@
 #get text and split into tokens and parts of speech
 import nltk
-from nltk import pos_tag, word_tokenize
+from nltk import pos_tag, word_tokenize, WhitespaceTokenizer
 
 def POS_tagger(list):
     taggedwordlist = nltk.pos_tag(list)
@@ -61,6 +61,13 @@ def POS_tagger(list):
     return POS_tags;
 
 transcript = open('ounupo.txt', 'r')
-
-words = nltk.word_tokenize(transcript.read())
-tagged = POS_tagger(words)
+words = WhitespaceTokenizer().tokenize(transcript.read())
+words_and_tags = {index : {'word':word} for index , word in enumerate(words)}
+POS_tags = POS_tagger(words)
+i = 0
+for item, value in words_and_tags.items():
+    word = words_and_tags[item]['word']
+    pos_tag = POS_tags[i]
+    words_and_tags[item]['POS'] = pos_tag
+    i += 1
+print(words_and_tags)
