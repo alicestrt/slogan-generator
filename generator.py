@@ -95,24 +95,23 @@ def doslogan(structure):
             newlist.append(one)
         else:
             newlist.append(item)
-    print('Here are a bunch of slogans you can choose from', ' '.join(newlist))
+    print(' '.join(newlist))
 
 def printmore(structure):
     for _ in range(1, 10):
         doslogan(structure)
 
-
 choice = input('Type a number from 1 to 5: ')
 if choice == '1':
     printmore(structure1)
 elif choice == '2':
-    printmore(structure1)
+    printmore(structure2)
 
 elif choice == '3':
-    printmore(structure1)
+    printmore(structure3)
 
 elif choice == '4':
-    printmore(structure1)
+    printmore(structure4)
 
 elif choice == '5':
-    printmore(structure1)
+    printmore(structure5)
