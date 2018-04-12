@@ -74,7 +74,13 @@ def givemeone(postag, allthewords):
 def alltags(allthewords):
     return [t[1] for t in allthewords]
 
-def doslogan():
+structure1 = ['noun', 'not', 'noun']
+structure2 = ['verb', 'the', 'noun']
+structure3 = ['noun', 'is', 'noun']
+structure4 = ['take back the', 'noun']
+structure5 = ['gentrification is', 'adjective', 'noun']
+
+def doslogan(structure):
     transcript = open('transcription.txt').read()
     words = WhitespaceTokenizer().tokenize(transcript)
     tagged = POS_tagger(words)
@@ -82,8 +88,8 @@ def doslogan():
     tags = alltags(tagged)
 
     newlist = []
-    structure1 = ['noun', 'not', 'noun']
-    for index, item in enumerate(structure1):
+
+    for index, item in enumerate(structure):
         if item in tags:
             one = givemeone(item, tagged)
             newlist.append(one)
@@ -91,5 +97,22 @@ def doslogan():
             newlist.append(item)
     print(' '.join(newlist))
 
-for _ in range(1, 10):
-    doslogan()
+def printmore(structure):
+    for _ in range(1, 10):
+        doslogan(structure)
+
+
+choice = input('Type a number from 1 to 5: ')
+if choice == '1':
+    printmore(structure1)
+elif choice == '2':
+    printmore(structure1)
+
+elif choice == '3':
+    printmore(structure1)
+
+elif choice == '4':
+    printmore(structure1)
+
+elif choice == '5':
+    printmore(structure1)
