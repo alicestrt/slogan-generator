@@ -75,7 +75,7 @@ def alltags(allthewords):
     return [t[1] for t in allthewords]
 
 def doslogan():
-    transcript = open('slogans.txt').read()
+    transcript = open('transcription.txt').read()
     words = WhitespaceTokenizer().tokenize(transcript)
     tagged = POS_tagger(words)
 
