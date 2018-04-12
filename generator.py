@@ -95,7 +95,7 @@ def doslogan(structure):
             newlist.append(one)
         else:
             newlist.append(item)
-    print(' '.join(newlist))
+    print('Here are a bunch of slogans you can choose from', ' '.join(newlist))
 
 def printmore(structure):
     for _ in range(1, 10):
